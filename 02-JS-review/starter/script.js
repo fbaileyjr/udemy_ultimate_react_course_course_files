@@ -150,6 +150,23 @@ const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
 
 // to declare an array destructure
-const [primaryGenre, secondaryGenre] = genres;
+const [primaryGenre, secondaryGenre, ...OtherGenre] = genres;
 
-console.log(primaryGenre, secondaryGenre);
+console.log(primaryGenre, secondaryGenre, OtherGenre);
+
+const newGenres = [...genres, "epic fantasy"];
+
+newGenres;
+
+// using spread to add all of the contents of book and the new entry
+// the order DOES matter, put new objects after the spread object
+const updatedBook = {
+  ...book,
+
+  // adding a new property
+  moviePublicationDate: "2001-12-19",
+
+  // updating an existing property
+  pages: 1210,
+};
+updatedBook;
