@@ -190,3 +190,25 @@ const pagesRange = pages > 1000 ? "over a thouasand" : "less than 1000";
 
 pagesRange;
 console.log(`The book has ${pagesRange}`);
+
+console.log(true && "Some string");
+console.log(false && "Some string");
+
+// falsy; 0, '', null, undefined
+console.log("jonas" && "Some string");
+
+console.log(true || "Some String");
+console.log(false || "Some String");
+
+const spanishTranslation = book.translations.spanish || "Not Translated";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount);
+
+// since the count is 0, instead of reporting 0, End operator returns "no data"
+const countWrong = book.reviews.librarything.reviewsCount || "no data";
+countWrong;
+
+// knowledge coalescing operator
+const count = book.reviews.librarything.reviewsCount ?? "no data";
+count;
