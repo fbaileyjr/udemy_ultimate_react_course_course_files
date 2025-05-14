@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // Destructuring
-const book = getBook(2);
+const book = getBook(3);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
@@ -203,12 +203,22 @@ console.log(false || "Some String");
 const spanishTranslation = book.translations.spanish || "Not Translated";
 spanishTranslation;
 
-console.log(book.reviews.librarything.reviewsCount);
+// console.log(book.reviews.librarything.reviewsCount);
 
 // since the count is 0, instead of reporting 0, End operator returns "no data"
-const countWrong = book.reviews.librarything.reviewsCount || "no data";
-countWrong;
+// const countWrong = book.reviews.librarything.reviewsCount || "no data";
+// countWrong;
 
 // knowledge coalescing operator
-const count = book.reviews.librarything.reviewsCount ?? "no data";
-count;
+// const count = book.reviews.librarything.reviewsCount ?? "no data";
+//count;
+
+function getTotalReviecount(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
+
+console.log(getTotalReviecount(book));
+
+getTotalReviecount(book);
