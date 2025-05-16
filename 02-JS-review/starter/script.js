@@ -213,7 +213,7 @@ spanishTranslation;
 // const count = book.reviews.librarything.reviewsCount ?? "no data";
 //count;
 
-function getTotalReviecount(book) {
+/*(function getTotalReviecount(book) {
   const goodreads = book.reviews.goodreads.reviewsCount;
   const librarything = book.reviews.librarything?.reviewsCount ?? 0;
   return goodreads + librarything;
@@ -222,3 +222,27 @@ function getTotalReviecount(book) {
 console.log(getTotalReviecount(book));
 
 getTotalReviecount(book);
+*/
+
+function getTotalReviecount(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
+
+const books = getBooks();
+books;
+
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+x;
+
+const titles = books.map((book) => book.title);
+titles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviecount(book),
+}));
+
+essentialData;
