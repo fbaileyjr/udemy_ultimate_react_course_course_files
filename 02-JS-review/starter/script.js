@@ -224,6 +224,7 @@ console.log(getTotalReviecount(book));
 getTotalReviecount(book);
 */
 
+/*
 function getTotalReviecount(book) {
   const goodreads = book.reviews.goodreads.reviewsCount;
   const librarything = book.reviews.librarything?.reviewsCount ?? 0;
@@ -292,3 +293,10 @@ const booksAfterUpdate = bookAfterDelete.map((book) =>
   book.id === 1 ? { ...book, pages: 1 } : book
 );
 booksAfterUpdate;
+
+*/
+
+// fetch, awaits for promise, use then for next action after response
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
