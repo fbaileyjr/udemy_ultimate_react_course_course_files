@@ -297,6 +297,15 @@ booksAfterUpdate;
 */
 
 // fetch, awaits for promise, use then for next action after response
-fetch("https://jsonplaceholder.typicode.com/todos")
-  .then((res) => res.json())
-  .then((data) => console.log(data));
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//  .then((res) => res.json())
+//  .then((data) => console.log(data));
+
+// async/await method
+async function getTodos() {
+  const rest = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await rest.json();
+  console.log(data);
+}
+
+getTodos();
